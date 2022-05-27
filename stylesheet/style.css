@@ -1,0 +1,214 @@
+:root{
+    --txt-clr:#555b6e;
+    --box-shadow:  1px 10px 12px rgba(0, 0, 0, .1);
+}
+/* main layout */
+.main-layout{
+    display: grid;
+    grid-template-columns: 15% 85%  ;
+    grid-template-rows: auto auto auto;
+}
+header{
+    grid-column:2/-1;
+    grid-row: 1/2;
+    padding-left: 10px;
+    height: 10vh;
+    max-height: 80px;
+    animation: cameIn .7s ease-in;
+}
+main{
+    grid-column:2/-1;
+    height: auto;
+    padding: 1rem;
+    animation: come 1.2s ease-in-out;
+}
+nav{
+    grid-row: 1/3;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 15%;
+    min-width: 55px;
+    box-shadow:var(--box-shadow);
+    animation: comon 1.36s;
+}
+footer{
+    grid-column: 1/-1;
+}
+/* header */
+.search-bar{
+    font-family:'Open Sans', "FontAwesome";
+    border: 1px solid #ccc;
+    background-color: transparent;
+    padding: 7px;
+    width: 50%;
+    max-width: 300px;
+    border-radius: 15px;
+}
+.search-bar::placeholder{
+    color: #222;
+}
+.search-btn{
+    margin-left: 10px;
+    width: 33px;
+    height: 33px;
+    color: #999;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    transition: color 150ms ease-in-out,
+                box-shadow 150ms ease-in-out;
+}
+.search-btn:focus,
+.search-btn:hover{
+    color: #F0A500;
+    box-shadow: 1px 2px 12px #F0A500;
+    background-color: transparent;
+    animation: shakeX 130ms alternate 5;
+    border: 0;
+
+}
+/* nav */
+.logo{
+    opacity: 0;
+    text-align: center;
+    font-size:1rem;
+    padding-top: 3.7rem;
+    font-family: 'Odibee Sans', cursive;
+    font-weight: lighter;
+    color: #999;
+    animation: 
+    comeIn 1.5s ease .6s,
+    fadeIn 4s .6s forwards,
+    space 1.2s ease-in-out forwards .6s;
+}
+.summary{
+    padding-right: 30px;
+    margin-left: auto;
+    font-size: .57rem;
+    font-weight: bold;
+    color: #c1c1cf;
+    opacity: 0;
+    animation: 
+    fadeIn 3s forwards 2s,
+    details 1s 2s;
+}
+/* side navigation */
+.sidenav{
+    padding-left: .5rem;
+    margin-top: 3rem;
+}
+.sidenav ul{
+    padding-left: .7rem;
+}
+.sidenav ul li{
+    padding: 6px 0;
+}
+.sidenav ul li a{
+    transition: all .5s;
+}
+.sidenav ul li:hover a{
+    color: #B22727;
+}
+.sidenav ul li a{
+    color: var(--txt-clr);
+}
+.sidenav ul li a i{
+    padding-right: 4px;   
+}
+/* main content */
+section{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    column-gap: 2rem;
+}
+.intro{
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 3px 12px rgba(0, 0, 0, .1);
+    padding: .7rem;
+}
+.intro-btn{
+    padding: .5rem 1.5rem;
+    border: 0;
+    background-color: #2155CD;
+    color: #fff;
+    border-radius: 6px;
+}
+.intro-btn:hover{
+    animation: scale .6s forwards ;
+}
+.intro img{
+    width: 270px;
+}
+.coments{
+    overflow: scroll;
+    max-height: 280px;
+}
+/* media-query */
+@media screen and (max-width: 1080px){
+    section{
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}
+@media screen and (max-width: 690px){
+    .intro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .intro .intro-left{
+        order: 1;
+    }
+
+}
+@media screen and (max-width: 789px) {
+    *[data-tool-tip]{
+        position: relative;
+        white-space: nowrap;
+    }
+    /* *[data-tool-tip]:focus::after, */
+    li:hover *[data-tool-tip]::after{
+        content: attr(data-tool-tip);
+        display: block;
+        position: absolute;
+        left: 26px;
+        bottom: 2px;
+        font-size: .73em; 
+        padding: 2px;
+        background-color: #B22727; 
+        padding: 1px 3px;
+        color: #fff;
+        animation: fadeIn .2s ease-in;
+    
+    }
+    .sidenav ul li a span{
+        display: none;
+    }
+    .sidenav{
+        padding-left: 2px;
+    }
+    .sidenav h4{
+        font-size: .8rem;
+    }
+    .sidenav ul li a i{
+        padding-left: 0;
+        margin: 0 30%;
+
+    }
+  }
+  @media screen and (max-width: 410px){
+    body{
+        font-size: 14px;
+    }
+    .sidenav h4{
+        font-size: .7rem;
+    }  
+    .summary{
+        padding-right: 1px;
+    } 
+    .sidenav ul li a i{
+        margin: 0 0;
+    }
+  }

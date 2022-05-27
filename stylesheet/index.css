@@ -1,0 +1,146 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Open+Sans:wght@300;400;600&display=swap');
+:root{
+    font-size: 16px;
+    --gradiant: linear-gradient(0deg, rgba(247,245,242,1) 0%, rgba(223,223,222,1) 100%); 
+    --box-shadow:  1px 10px 12px rgba(0, 0, 0, .1);
+}
+
+/* defaults */
+body,html{
+    margin: 0;
+    padding: 0;
+    background: var(--gradiant);
+    caret-color: #333;
+    font-family: 'Open Sans', sans-serif;
+    background-attachment: fixed;
+    color: var(--txt-clr);
+    font-weight: 300;
+    line-height: 1.6;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+input:focus{
+    outline: 0;
+}
+
+button{
+    display: inline-block;
+    cursor: pointer;
+}
+ul,ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+h4,h5,h6{
+    padding: .4rem 0;
+    margin: 0;
+}
+/* utiliti */
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+
+/* keyframes */
+@keyframes shakeX {
+    0%{
+        transform: translateX(-4px);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(4px);
+    }
+    
+}
+@keyframes scale {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+@keyframes comeIn {
+    0%{
+        transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes cameIn {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes comon {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes space {
+    0%{
+        letter-spacing: -2px;
+    }
+    100%{
+        letter-spacing: 4px;
+    }
+    
+}
+@keyframes details {
+    0%{
+        transform: translateX(-100%);
+    }    
+    100%{
+        transform: translateX(0);
+    }    
+}
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(.95);
+    }
+}
+@keyframes come {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
